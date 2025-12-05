@@ -29,4 +29,4 @@ jobs:
           local-dir: ./
 
           # 👇 REMOTE path on InfinityFree (relative to FTP root)
-          server-dir: htdocs/wp-content/themes/travelblog/
+          server-dir: travel-blog.infinityfree.me/htdocs/wp-content/themes/travelblog/
