@@ -1,0 +1,32 @@
+name: Deploy travelblog theme to InfinityFree
+
+on:
+  push:
+    branches:
+      - main        # deploy whenever you push to main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: FTP Deploy to InfinityFree
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+
+          # 👇 LOCAL path inside the repo
+          # This assumes your repo root IS the "travelblog" theme.
+          # If in your repo the theme is in wp-content/themes/travelblog,
+          # change this to: local-dir: wp-content/themes/travelblog/
+          local-dir: ./
+
+          # 👇 REMOTE path on InfinityFree (relative to FTP root)
+          server-dir: htdocs/wp-content/themes/travelblog/
