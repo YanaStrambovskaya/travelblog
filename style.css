@@ -1,0 +1,12 @@
+/*
+ Theme Name: TravelBlog
+ Theme URI: https://example.com
+ Author: Yana Strambovskaya
+ Author URI: https://example.com
+ Description: Custom theme for my travel blog.
+ Version: 1.0
+ Text Domain: travelblog
+*/
+p {
+    color: red;
+}
