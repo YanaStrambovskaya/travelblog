@@ -32,3 +32,23 @@ function travelblog_scripts() {
     // );
 }
 add_action( 'wp_enqueue_scripts', 'travelblog_scripts' );
+
+function travelblog_assets() {
+    $theme_dir = get_template_directory();
+    $theme_uri = get_template_directory_uri();
+
+    // Load main Webpack CSS
+    $css_path = $theme_dir . '/public/css/main.css';
+    $css_uri  = $theme_uri . '/public/css/main.css';
+
+    if ( file_exists( $css_path ) ) {
+        wp_enqueue_style(
+            'travelblog-main-css',
+            $css_uri,
+            array(),
+            filemtime( $css_path )
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'travelblog_assets' );
+

@@ -1,0 +1,40 @@
+// Spacing
+.mt-sm { margin-top: $space-sm; }
+.mt-md { margin-top: $space-md; }
+.mt-lg { margin-top: $space-lg; }
+
+.mb-sm { margin-bottom: $space-sm; }
+.mb-md { margin-bottom: $space-md; }
+.mb-lg { margin-bottom: $space-lg; }
+
+// Flex utilities
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Text alignment
+.text-center {
+    text-align: center;
+}
+
+// Container utility
+.container { 
+    width: 100%;
+    max-width: $container-max;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $space-md;
+    padding-right: $space-md;
+}

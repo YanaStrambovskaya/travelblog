@@ -1,0 +1,18 @@
+// Webpack entry file
+
+// Variables and mixins first
+@import 'variables';
+@import 'normalize';
+@import 'mixins'; // _mixins.scss is a partial SCSS file that contains reusable mixins — small, flexible pieces of CSS logic that you can include throughout your styles.
+
+// Global styles
+@import 'global';
+
+// Components
+@import 'components/header';
+@import 'components/footer';
+@import 'components/buttons';
+
+// Page-specific styles
+@import 'pages/home';
+@import 'pages/blog';

@@ -1,0 +1,33 @@
+// Variables (colors, spacing, fonts, breakpoints)
+
+
+// COLORS
+$color-primary: #1e88e5;
+$color-secondary: #f06292;
+$color-dark: #222;
+$color-light: #f7f7f7;
+$color-gray: #888;
+
+// TYPOGRAPHY
+$font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// SPACING (scale)
+$space-xxs: 4px;
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-xxl: 48px;
+
+// BREAKPOINTS
+$bp-xs: 480px;
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// CONTAINER WIDTH
+$container-max: 1200px;
