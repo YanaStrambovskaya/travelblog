@@ -2,9 +2,22 @@
 /* Template for the front page */
 get_header();
 ?>
+<!-- <div id="react-root"></div> -->
+<section class="hero container">
 
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <section class="hero">
+        <div class="container">
+            <h1><?php the_field( 'hero_title' ); ?></h1>
+            <p><?php the_field( 'hero_subtitle' ); ?></p>
+            <p><?php the_field( 'hero_text' ); ?></p>
+        </div>
+    </section>
+    <?php endwhile; endif; ?>
+
+</section>
 <section class="hero">
-    Hello!
+    <!-- Hello!
     <h1><?php bloginfo( 'name' ); ?></h1>
     <p><?php bloginfo( 'description' ); ?></p>
 </section>
@@ -23,7 +36,7 @@ get_header();
         wp_reset_postdata();
     endif;
     ?>
-</section>
+</section> -->
 
 <?php
 get_footer();
