@@ -30458,7 +30458,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const rootElement = document.getElementById("react-root");
+const rootElement = document.getElementById('react-root');
 if (rootElement) {
   const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(rootElement);
   root.render(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_App_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));

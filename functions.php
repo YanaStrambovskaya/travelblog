@@ -1,23 +1,34 @@
-<!-- register assets & theme features -->
-<!-- Assets are all static files that the website needs to run or display properly. -->
 
-
-<!-- ideas!!! -->
-<!-- Add conditional loading (load JS/CSS only on home page) -->
-<!-- Add Google Fonts preload -->
-<!-- Add versioning automatically based on file modification time -->
 <?php
+// <!-- register assets & theme features -->
+// <!-- Assets are all static files that the website needs to run or display properly. -->
+
+
+// <!-- ideas!!! -->
+// <!-- Add conditional loading (load JS/CSS only on home page) -->
+// <!-- Add Google Fonts preload -->
+// <!-- Add versioning automatically based on file modification time -->
 // functions.php
 
+define( 'THEME_URI', get_template_directory_uri() );
 // 1. Theme supports
 function travelblog_setup() {
     add_theme_support( 'title-tag' ); // generate Title tag in the header section. So there is no need to hardcode it manually in the header.php
     add_theme_support( 'post-thumbnails' ); // Enables features images for posts and pages. The Wordpress editor shows Features images panel. It is possible to call the_post_thumbnail() in the template.
+    add_theme_support('custom-logo', array(
+        'height'      => 160,
+        'width'       => 286,
+        'flex-width' => true,
+        'flex-height' => true,
+    )); // Enable custom logo support in the theme. The Wordpress editor shows Custom Logo panel. It is possible to call the_custom_logo() in the template.
 
     register_nav_menus( // Create a place in the theme where the menu can be assigned
         array(
-        'main menu' => __( 'Main menu', 'travelblog' ), //'travelblog' is important for localization.
-    ) 
+        'main_menu_left' => __( 'Main Menu Left', 'travelblog' ), //'travelblog' is important for localization.
+        'main_menu_right' => __( 'Main Menu Right', 'travelblog' ), //'travelblog' is important for localization.
+        'topbar_left'  => __('Topbar Left', 'travelblog'),
+        'social_menu' => __('Topbar Right', 'travelblog'),
+    )
 );
 }
 add_action( 'after_setup_theme', 'travelblog_setup' ); // after_setup_theme is a special Wordpress event that runs after the theme is intializied.
@@ -44,13 +55,13 @@ function travelblog_theme_style() {
     );
 
     // Example: main.js in /public/js/ (if you build assets there)
-    // wp_enqueue_script(
-    //     'travelblog-main-js',
-    //     get_template_directory_uri() . '/public/js/main.js',
-    //     array(),
-    //     '1.0', // version
-    //     true // loads it in the footer. Good for performance.
-    // );
+    wp_enqueue_script(
+        'travelblog-main-js',
+        THEME_URI . '/public/js/main.bundle.js',
+        array(),
+        '1.0', // version
+        true // loads it in the footer. Good for performance.
+    );
 }
 add_action( 'wp_enqueue_scripts', 'travelblog_theme_style' );
 
@@ -82,6 +93,11 @@ function travelblog_assets() {
             // media type. All by default.
         );
     }
+    // wp_add_inline_style( 'theme-main', '
+    //     :root {
+    //         --theme-uri: "' . esc_url( get_stylesheet_directory_uri() ) . '";
+    //     }
+    // ' );
 }
 add_action( 'wp_enqueue_scripts', 'travelblog_assets' );
 

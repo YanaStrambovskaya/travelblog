@@ -1,0 +1,192 @@
+.hero-section {
+  .torn {
+    margin-top: -100px;
+  }
+  .glide__slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    .hero-slide_title {
+      font-family: $font-heading, sans-serif;
+      font-size: 60px;
+      color: $color-white;
+      text-transform: uppercase;
+      margin: 100px 0 0 0;
+    }
+    .hero-slide_description {
+      font-family: 'Roboto-Light', sans-serif;
+      font-size: 20px;
+      color: $color-white;
+      max-width: 570px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+// ------------------------------
+.recent-post-card {
+  position: relative;
+  gap: 5px;
+  .category-label {
+    position: absolute;
+    z-index: 2;
+    top: 22px;
+    left: -17px;
+    .category-name {
+      position: relative;
+      margin-top: 6px;
+      z-index: 3;
+      color: $color-beige-dark;
+      font-family: $font-cursive;
+      padding-right: 20px;
+
+      font-size: 18px;
+    }
+    svg.label-icon {
+      margin-left: 24px;
+      transform: rotate(90deg);
+      height: 27px;
+      width: 27px;
+      z-index: 3;
+      position: relative;
+    }
+    .category-label-bg {
+      display: flex;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      svg {
+        height: 100%;
+        position: absolute;
+        top: 0;
+      }
+      svg:first-of-type {
+        left: 0;
+      }
+      svg:last-of-type {
+        right: -22px;
+      }
+      .middle {
+        height: 100%;
+        display: block;
+        width: 100%;
+        background-color: #f2f1ea;
+        left: 12px;
+        position: relative;
+      }
+      svg polygon {
+        fill: #f2f1ea;
+        stroke: #f2f1ea;
+      }
+    }
+  }
+}
+
+// ---------
+.contact-section {
+  form {
+    .wpcf7-response-output {
+      border: none;
+      font-family: $font-cursive;
+      color: $color-error;
+      margin: 0;
+      padding-left: 0;
+      font-size: $font-size-paragraph;
+    }
+    .wpcf7-not-valid-tip {
+      font-family: $font-cursive;
+      color: $color-error;
+      font-size: $font-size-paragraph;
+    }
+    .wpcf7-spinner {
+      display: none;
+    }
+    // display: flex;
+    // gap: 10px;
+    input {
+      height: 50px;
+      padding: 10px 20px;
+      border: none;
+      caret-color: $color-gray-2;
+      color: $color-gray-2;
+      font-family: $font-cursive;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    br {
+      display: none;
+    }
+    ::placeholder {
+      font-family: $font-cursive;
+      color: $color-gray-2;
+      font-size: $font-size-paragraph;
+      opacity: 1;
+    }
+    input[type='submit'] {
+      background-color: $color-olive-green;
+      font-family: $font-heading;
+      text-transform: uppercase;
+      color: $color-white;
+      &:hover {
+        background-color: $color-olive-green-hover;
+      }
+    }
+  }
+}
+
+.read-more-text {
+  font-family: $font-heading;
+  text-transform: uppercase;
+  color: $color-dark;
+  font-size: $font-size-paragraph;
+}
+.destination-category-item {
+  display: flex;
+  justify-content: center;
+  .number-of-destination {
+    font-family: $font-sans;
+    font-size: $font-size-paragraph;
+    color: $color-gray-2;
+  }
+  .item-name {
+    font-size: 22px;
+    text-align: center;
+  }
+  .item-icons {
+    position: relative;
+    .icon {
+      opacity: 1;
+      height: auto;
+    }
+    .hover-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      height: auto;
+    }
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &:hover {
+      .icon {
+        opacity: 0;
+      }
+      .hover-icon {
+        opacity: 1;
+      }
+    }
+  }
+}

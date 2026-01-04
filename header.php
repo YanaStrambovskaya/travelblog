@@ -1,3 +1,8 @@
+<?php 
+    // $theme_uri = get_template_directory_uri();
+    // $site_name = get_bloginfo( 'name' ); // outputs (prints) site title of the Wordpress website;
+    // $phone_icon = esc_url(get_template_directory_uri() . '/assets/icons/phone-svgrepo-com.svg');
+;?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <!-- language_attributes() - Wordpress function that prints  attr on the  -->
@@ -22,29 +27,20 @@
      - custom post type;
      - custom taxonomies;
      - body class filters added by your theme or plugins. -->
-<header class="site-header">
-    <div class="logo">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <?php bloginfo( 'name' ); ?>
-        </a>
-    </div>
 
-    <nav class="main-nav">
-        <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'main menu'
-                )
-            )
-        ?>
-        <?php
-        // wp_nav_menu( array(
-        //     'theme_location' => 'primary',
-        //     'container'      => false,
-        //     'menu_class'     => 'menu',
-        // ) );
-        ?>
-    </nav>
+<style>
+    /* DELETE!!!!! */
+    #wpadminbar {
+        display: none;
+    }
+    :root {
+        /* --icon-phone: url('<?php echo $phone_icon; ?>');  */
+  }
+</style>
+
+<header>
+    <?php get_template_part( 'template-parts/header/topbar' ); ?>
+    <?php get_template_part( 'template-parts/header/site-menu' ); ?>
 </header>
 
 <main class="site-main">

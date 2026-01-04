@@ -1,0 +1,27 @@
+.menu-item-active-hover {
+  display: flex;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  clip-path: inset(0 100% 0 0);
+  transition: all 0.3s ease-in-out;
+  will-change: clip-path;
+  justify-content: space-between;
+  svg polygon {
+    fill: $color-ivory-white;
+    stroke: $color-ivory-white;
+  }
+  .svg-right {
+    right: 0;
+  }
+}
+
+.menu-item-active-hover-middle {
+  left: 17px;
+  width: calc(100% - 30px);
+  position: absolute;
+  height: 100%;
+  background-color: $color-ivory-white;
+}

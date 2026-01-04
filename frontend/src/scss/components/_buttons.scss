@@ -1,0 +1,25 @@
+.btn {
+  text-decoration: none;
+  font-family: $font-heading, sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.color-olive-green-btn {
+  color: $color-white;
+  background-color: $color-olive-green;
+  padding: 10px 40px;
+  img {
+    width: 30px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    background-color: $color-olive-green-hover;
+    img {
+      transform: rotate(45deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

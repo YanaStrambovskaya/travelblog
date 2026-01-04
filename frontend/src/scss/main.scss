@@ -1,8 +1,15 @@
 // Webpack entry file
+// Required Core Stylesheet
+@import '/node_modules/@glidejs/glide/src/assets/sass/glide.core';
+// Optional Theme Stylesheet
+@import '/node_modules/@glidejs/glide/src/assets/sass/glide.theme';
 
 // Variables and mixins first
 @import 'variables';
 @import 'normalize';
+@import 'utilities';
+@import 'variables';
+@import 'fonts';
 @import 'mixins'; // _mixins.scss is a partial SCSS file that contains reusable mixins — small, flexible pieces of CSS logic that you can include throughout your styles.
 
 // Global styles
@@ -12,7 +19,10 @@
 @import 'components/header';
 @import 'components/footer';
 @import 'components/buttons';
+@import 'components/torn-bg-under-word';
 
 // Page-specific styles
-@import 'pages/home';
+@import 'pages/front-page';
 @import 'pages/blog';
+@import 'pages/category';
+@import 'pages/single-destination';

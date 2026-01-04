@@ -1,0 +1,51 @@
+.single-destination {
+  .section-title {
+    margin-bottom: 15px;
+  }
+}
+.key-points-container {
+  .img-container {
+    width: 50px;
+    height: 50px;
+  }
+  a {
+    align-items: center;
+    span {
+      font-family: $font-cursive;
+      color: $color-beige-dark;
+      font-size: 18px;
+    }
+  }
+  .icon {
+    // width: 50px;
+    height: auto;
+  }
+}
+.destination-related {
+  img {
+    width: 50px;
+    height: auto;
+  }
+  .post-card a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.destination-facts {
+  .fact {
+    margin-bottom: 5px;
+  }
+  .label {
+    font-family: $font-heading;
+    text-transform: uppercase;
+    color: $color-dark;
+    font-size: $font-size-paragraph;
+  }
+  .value {
+    font-family: $font-sans;
+    color: $color-gray-2;
+    font-size: $font-size-paragraph;
+  }
+}

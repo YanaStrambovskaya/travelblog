@@ -1,7 +1,11 @@
+<?php 
+
+;?>
 </main> <!-- end .site-main -->
 
 <footer class="site-footer">
-    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></p>
+    <?php get_template_part('template-parts/footer/footer-top') ;?>
+    <?php get_template_part('template-parts/footer/footer-bottom-bar') ;?>
 </footer>
 
 <?php wp_footer(); ?>

@@ -46,6 +46,7 @@
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.7.1",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
   }
