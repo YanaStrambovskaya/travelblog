@@ -44,6 +44,12 @@
     min-width: 0;
   }
 }
+.equal-columns-height {
+  align-items: stretch;
+}
+.margin-bottom-auto {
+  margin-bottom: auto;
+}
 
 .flex-center {
   display: flex;
@@ -81,7 +87,12 @@
   margin: 0 auto;
   position: relative;
 }
-
+.position-absolute {
+  position: absolute;
+}
+.position-relative {
+  position: relative;
+}
 .no-margin {
   margin-top: 0;
   margin-bottom: 0;

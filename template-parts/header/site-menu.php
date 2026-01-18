@@ -40,8 +40,8 @@ $site_name = get_bloginfo( 'name' ); // outputs (prints) site title of the Wordp
                     )
             )
             ?>
+            <div class="header-search">
+                <?php get_search_form(); ?>
+            </div>
         </nav>
-    </div>
-    <div class="header-search">
-        <?php get_search_form(); ?>
     </div>

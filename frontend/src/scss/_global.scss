@@ -54,6 +54,14 @@ body.home .glide__slide--active {
   pointer-events: auto;
   z-index: 2;
 }
+.grid-3-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-2-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
 body.home .glide__arrows {
   .glide__arrow {
@@ -378,5 +386,197 @@ body.archive.category .post-items {
   }
   .current {
     color: $color-olive-green;
+  }
+}
+
+// torn-label-container
+// .torn-label-container {
+//   position: absolute;
+//   z-index: 2;
+//   top: 22px;
+//   left: -17px;
+//   .torn-label-container_title {
+//     position: relative;
+//     margin-top: 6px;
+//     z-index: 3;
+//     color: $color-beige-dark;
+//     font-family: $font-cursive;
+//     padding-right: 20px;
+
+//     font-size: 18px;
+//   }
+//   svg.label-icon {
+//     transform: rotate(90deg);
+//     height: 27px;
+//     width: 27px;
+//     z-index: 3;
+//     position: relative;
+//   }
+//   .torn-label-container_bg {
+//     display: flex;
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     width: 100%;
+//     z-index: 2;
+//     svg {
+//       height: 100%;
+//       position: absolute;
+//       top: 0;
+//     }
+//     svg:first-of-type {
+//       left: 0;
+//     }
+//     svg:last-of-type {
+//       right: -22px;
+//     }
+//     .middle {
+//       height: 100%;
+//       display: block;
+//       width: 100%;
+//       background-color: #f2f1ea;
+//       left: 12px;
+//       position: relative;
+//     }
+//     svg polygon {
+//       fill: #f2f1ea;
+//       stroke: #f2f1ea;
+//     }
+//   }
+// }
+.recent-post-card {
+  .torn-label-container {
+    position: absolute;
+    z-index: 2;
+    top: 22px;
+    left: 2px;
+  }
+  .torn-text {
+    // background-color: #f2f1ea;
+    padding: 5px 5px;
+  }
+}
+.torn-side-left {
+  position: absolute;
+  right: calc(100% - 3px);
+  top: 0;
+  height: 100%;
+  fill: #f2f1ea;
+}
+.torn-side-right {
+  position: absolute;
+  left: calc(100% - 3px);
+  top: 0;
+  height: 100%;
+  fill: #f2f1ea;
+}
+.torn-text {
+  background-color: #f2f1ea;
+  padding: 15px 40px;
+  display: inline-block;
+  margin: 0;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.torn-label-container .label-icon {
+  transform: rotate(90deg);
+  height: 27px;
+  width: 27px;
+  z-index: 3;
+  position: relative;
+}
+
+.destination-item {
+  position: relative;
+  min-height: 350px;
+  font-size: 35px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .wp-post-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .title {
+    background-color: $color-white;
+  }
+}
+
+.post-navigation {
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 14px;
+    font-family: $font-heading;
+    text-transform: uppercase;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.comment-respond {
+  // display: inline-block;
+  .form-submit {
+    display: inline-block;
+  }
+  textarea {
+    border-color: #ddd;
+    display: block;
+    width: 100%;
+  }
+  .comment-reply-title {
+    font-size: 35px;
+  }
+  label {
+    font-family: $font-cursive;
+    font-size: $font-size-paragraph;
+  }
+  input:not([type='submit']):not([type='checkbox']) {
+    font-family: $font-cursive;
+    padding: 8px;
+    border: 1px solid #ddd;
+    height: 50px;
+    border-radius: 0;
+    background-color: transparent;
+    color: $color-dark;
+    width: 100%;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  input[type='checkbox'] {
+    border: 1px solid #ddd;
+    width: auto;
+  }
+  .comment-form-cookies-consent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  input[type='submit'] {
+    background-color: $color-olive-green;
+    font-family: $font-heading;
+    text-transform: uppercase;
+    color: $color-white;
+    border: 0;
+    padding: 20px 25px;
+    &:hover {
+      background-color: $color-olive-green-hover;
+    }
   }
 }

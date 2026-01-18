@@ -16,7 +16,13 @@
             <?php endwhile; ?>
         </div>
 
-        <?php the_posts_pagination(); ?>
+        <div class="pagination">
+            <?php the_posts_pagination( array(
+                'mid_size' => 2,
+                'prev_text' => __('«', 'travelblog'),
+                'next_text' => __('»', 'travelblog'),
+            ) );?>
+        </div>
     <?php else : ?>
         <p><?php _e( 'No posts found.', 'travelblog' ); ?></p>
     <?php endif; ?>

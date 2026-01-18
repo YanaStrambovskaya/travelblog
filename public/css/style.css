@@ -419,6 +419,14 @@ li {
   min-width: 0;
 }
 
+.equal-columns-height {
+  align-items: stretch;
+}
+
+.margin-bottom-auto {
+  margin-bottom: auto;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -454,6 +462,14 @@ li {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
   position: relative;
 }
 
@@ -589,6 +605,16 @@ body.home .glide__slide--active {
   position: relative;
   pointer-events: auto;
   z-index: 2;
+}
+
+.grid-3-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 body.home .glide__arrows .glide__arrow {
@@ -872,6 +898,139 @@ body.archive.category .post-items .recent-post-card {
   color: #59815b;
 }
 
+.recent-post-card .torn-label-container {
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  left: 2px;
+}
+.recent-post-card .torn-text {
+  padding: 5px 5px;
+}
+
+.torn-side-left {
+  position: absolute;
+  right: calc(100% - 3px);
+  top: 0;
+  height: 100%;
+  fill: #f2f1ea;
+}
+
+.torn-side-right {
+  position: absolute;
+  left: calc(100% - 3px);
+  top: 0;
+  height: 100%;
+  fill: #f2f1ea;
+}
+
+.torn-text {
+  background-color: #f2f1ea;
+  padding: 15px 40px;
+  display: inline-block;
+  margin: 0;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.torn-label-container .label-icon {
+  transform: rotate(90deg);
+  height: 27px;
+  width: 27px;
+  z-index: 3;
+  position: relative;
+}
+
+.destination-item {
+  position: relative;
+  min-height: 350px;
+  font-size: 35px;
+}
+.destination-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.destination-item .wp-post-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.destination-item .title {
+  background-color: #fff;
+}
+
+.post-navigation .nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 14px;
+  font-family: "Oswald SemiBold", sans-serif;
+  text-transform: uppercase;
+}
+.post-navigation a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.comment-respond .form-submit {
+  display: inline-block;
+}
+.comment-respond textarea {
+  border-color: #ddd;
+  display: block;
+  width: 100%;
+}
+.comment-respond .comment-reply-title {
+  font-size: 35px;
+}
+.comment-respond label {
+  font-family: "CrimsonText-Italic", sans-serif;
+  font-size: 16px;
+}
+.comment-respond input:not([type=submit]):not([type=checkbox]) {
+  font-family: "CrimsonText-Italic", sans-serif;
+  padding: 8px;
+  border: 1px solid #ddd;
+  height: 50px;
+  border-radius: 0;
+  background-color: transparent;
+  color: #232625;
+  width: 100%;
+}
+.comment-respond input:not([type=submit]):not([type=checkbox]):focus-visible {
+  outline: none;
+}
+.comment-respond input[type=checkbox] {
+  border: 1px solid #ddd;
+  width: auto;
+}
+.comment-respond .comment-form-cookies-consent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.comment-respond input[type=submit] {
+  background-color: #59815b;
+  font-family: "Oswald SemiBold", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0;
+  padding: 20px 25px;
+}
+.comment-respond input[type=submit]:hover {
+  background-color: #416543;
+}
+
 header {
   position: absolute;
   top: 0;
@@ -994,7 +1153,6 @@ header a.custom-logo-link img.custom-logo {
 }
 header .header-search {
   text-align: center;
-  margin-top: 30px;
 }
 header .header-search form {
   display: inline-block;
@@ -1005,9 +1163,9 @@ header .header-search .search-field {
   color: #fff;
   font-family: "Oswald SemiBold", sans-serif;
   caret-color: #fff;
-  width: 240px;
+  width: 100px;
   border-bottom: 1px solid #ffffff;
-  padding: 10px;
+  padding: 8px 0px;
 }
 header .header-search .search-field:focus-visible {
   outline: none;
@@ -1033,8 +1191,8 @@ header .header-search {
 }
 header .header-search ::placeholder {
   color: #fff;
-  font-family: "Oswald SemiBold", sans-serif;
-  font-size: 20px;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 15px;
   opacity: 1;
 }
 header .header-search {
@@ -1128,7 +1286,7 @@ footer .footer-top .footer-recent__date:hover {
 }
 footer .footer-top .footer-recent__link {
   font-family: "Roboto-Regular", sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   color: #b9b9b9;
 }
 footer .footer-top .footer-top_text {
@@ -1233,61 +1391,6 @@ footer p {
 
 .recent-post-card {
   position: relative;
-  gap: 5px;
-}
-.recent-post-card .category-label {
-  position: absolute;
-  z-index: 2;
-  top: 22px;
-  left: -17px;
-}
-.recent-post-card .category-label .category-name {
-  position: relative;
-  margin-top: 6px;
-  z-index: 3;
-  color: #878787;
-  font-family: "CrimsonText-Italic", sans-serif;
-  padding-right: 20px;
-  font-size: 18px;
-}
-.recent-post-card .category-label svg.label-icon {
-  margin-left: 24px;
-  transform: rotate(90deg);
-  height: 27px;
-  width: 27px;
-  z-index: 3;
-  position: relative;
-}
-.recent-post-card .category-label .category-label-bg {
-  display: flex;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-}
-.recent-post-card .category-label .category-label-bg svg {
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-.recent-post-card .category-label .category-label-bg svg:first-of-type {
-  left: 0;
-}
-.recent-post-card .category-label .category-label-bg svg:last-of-type {
-  right: -22px;
-}
-.recent-post-card .category-label .category-label-bg .middle {
-  height: 100%;
-  display: block;
-  width: 100%;
-  background-color: #f2f1ea;
-  left: 12px;
-  position: relative;
-}
-.recent-post-card .category-label .category-label-bg svg polygon {
-  fill: #f2f1ea;
-  stroke: #f2f1ea;
 }
 
 .contact-section form .wpcf7-response-output {
@@ -1382,7 +1485,8 @@ footer p {
   opacity: 1;
 }
 
-.category-item a {
+.category-item a,
+.tag-item a {
   font-family: "CrimsonText-Italic", sans-serif;
   font-size: 18px;
   color: #878787;

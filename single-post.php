@@ -14,9 +14,10 @@ get_header(); ?>
     </div>
     <img class="common-hero-bg" src="<?php echo THEME_URI . '/assets/images/blog-post-img-09.jpg' ;?>" alt="">
 </section>
+<div class="spacer"></div>
 <section class="blog-content">
     <div class="container">
-        <div class="flex-between">
+        <div class="flex-between gap-20 flex-start">
             <div class="col-70">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <!-- the_post() prepares the global post context -->
@@ -47,8 +48,8 @@ get_header(); ?>
                         // 'in_same_term' => true,
                         // 'taxonomy'     => 'destination',
 
-                        'prev_text' => '<span class="nav-label">' . esc_html__( 'Previous', 'travelblog' ) . '</span><span class="nav-title">%title</span>',
-                        'next_text' => '<span class="nav-label">' . esc_html__( 'Next', 'travelblog' ) . '</span><span class="nav-title">%title</span>',
+                        'prev_text' => '<span class="nav-label"><svg width="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 20L11.2929 20.7071L12 21.4142L12.7071 20.7071L12 20ZM13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L13 5ZM5.29289 14.7071L11.2929 20.7071L12.7071 19.2929L6.70711 13.2929L5.29289 14.7071ZM12.7071 20.7071L18.7071 14.7071L17.2929 13.2929L11.2929 19.2929L12.7071 20.7071ZM13 20L13 5L11 5L11 20L13 20Z" fill="#33363F"></path> </g></svg></span><span class="nav-title">%title</span>',
+                        'next_text' => '<span class="nav-title">%title</span><span class="nav-label"><svg width="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 20L11.2929 20.7071L12 21.4142L12.7071 20.7071L12 20ZM13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L13 5ZM5.29289 14.7071L11.2929 20.7071L12.7071 19.2929L6.70711 13.2929L5.29289 14.7071ZM12.7071 20.7071L18.7071 14.7071L17.2929 13.2929L11.2929 19.2929L12.7071 20.7071ZM13 20L13 5L11 5L11 20L13 20Z" fill="#33363F"></path> </g></svg></span>',
                         ]);
                         ?>
                     </nav>
@@ -80,4 +81,5 @@ get_header(); ?>
         </div>
     </div>
 </section>
+<div class="spacer"></div>
 <?php get_footer(); ?>

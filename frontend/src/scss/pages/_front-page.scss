@@ -33,62 +33,6 @@
 // ------------------------------
 .recent-post-card {
   position: relative;
-  gap: 5px;
-  .category-label {
-    position: absolute;
-    z-index: 2;
-    top: 22px;
-    left: -17px;
-    .category-name {
-      position: relative;
-      margin-top: 6px;
-      z-index: 3;
-      color: $color-beige-dark;
-      font-family: $font-cursive;
-      padding-right: 20px;
-
-      font-size: 18px;
-    }
-    svg.label-icon {
-      margin-left: 24px;
-      transform: rotate(90deg);
-      height: 27px;
-      width: 27px;
-      z-index: 3;
-      position: relative;
-    }
-    .category-label-bg {
-      display: flex;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-      svg {
-        height: 100%;
-        position: absolute;
-        top: 0;
-      }
-      svg:first-of-type {
-        left: 0;
-      }
-      svg:last-of-type {
-        right: -22px;
-      }
-      .middle {
-        height: 100%;
-        display: block;
-        width: 100%;
-        background-color: #f2f1ea;
-        left: 12px;
-        position: relative;
-      }
-      svg polygon {
-        fill: #f2f1ea;
-        stroke: #f2f1ea;
-      }
-    }
-  }
 }
 
 // ---------

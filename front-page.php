@@ -80,7 +80,7 @@ get_header();
 <section class="destinations-section">
     <div class="container">
         <h2 class="section-title">Top <span>Destinations</span></h2>
-        <div class="equal-columns gap-20">
+        <div class="equal-columns equal-columns-height gap-20">
             <?php if ($top_destinations->have_posts()) : ?>
             <?php while ($top_destinations->have_posts()) : $top_destinations->the_post() ; ?>
                 <div class="destination-card flex-column-direction">
@@ -109,7 +109,7 @@ get_header();
 <section class="contact-section beige-bg">
     <img class="torn torn-top" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
     <div class="container">
-        <div class="equal-columns gap-30">
+        <div class="equal-columns equal-columns-height gap-30">
             <div>
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/h1-img-01.png' ;?>" alt="Subscribe">
             </div>
@@ -129,7 +129,7 @@ get_header();
 <section class="recent-post-section">
     <div class="container">
         <h2 class="section-title">Recent <span>Posts</span></h2>
-        <div class="equal-columns gap-20">
+        <div class="equal-columns equal-columns-height gap-20">
             <?php if ($recent_posts->have_posts()) : ?>
                 <?php while ($recent_posts->have_posts()) : $recent_posts->the_post() ; ?>
                     <?php get_template_part(
@@ -148,7 +148,7 @@ get_header();
 <section class="shop-section beige-bg">
     <img class="torn torn-top" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
     <div class="container">
-        <h2 class="section-title">Travel essentials <span>items</span></h2>
+        <h2 class="section-title">Enjoy every <span>moment</span></h2>
     </div>
     <img class="torn torn-bottom" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
 </section>
