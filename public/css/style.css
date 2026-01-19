@@ -723,6 +723,7 @@ body.home .glide__slide--active {
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
+  z-index: 3;
 }
 
 body.home .glide__arrows .glide__arrow {
