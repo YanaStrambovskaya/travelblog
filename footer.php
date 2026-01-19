@@ -1,6 +1,7 @@
 <?php 
 
 ;?>
+<div class="bg-overflow"></div>
 </main> <!-- end .site-main -->
 
 <footer class="site-footer">

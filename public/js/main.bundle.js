@@ -3975,6 +3975,7 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener('DOMContentLoaded', function () {
   initGlide('.js-glide');
+  initMobileMenu();
 });
 function initGlide(className) {
   if (!document.querySelectorAll(className).length) return;
@@ -3992,6 +3993,19 @@ function initGlide(className) {
       new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"](glideElement, option).mount();
     }
   });
+}
+function initMobileMenu() {
+  const mobileTrigger = document.getElementById('mobile-menu-trigger');
+  const mobileMenu = document.querySelector('.mobile-nav');
+  const bg_overflow = document.querySelector('.bg-overflow');
+  if (mobileTrigger && mobileMenu) {
+    mobileTrigger.addEventListener('click', function () {
+      mobileMenu.classList.toggle('open');
+      if (bg_overflow) {
+        bg_overflow.classList.toggle('active');
+      }
+    });
+  }
 }
 })();
 

@@ -25,8 +25,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 <div class="spacer"></div>
 <section>
   <div class="container">
-  <div class="flex-between gap-20 flex-start">
-    <div class="content col-70">
+  <div class="flex-col-mobile flex-row-desktop flex-between gap-20 flex-start">
+    <div class="content col-70-desktop  full-width">
       <!-- CONTENT START-------------------------------------------------------- -->
       <article class="content">
         <?php the_content(); ?>
@@ -145,13 +145,13 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                   <a class="flex" href="<?php echo esc_url( get_permalink( $p->ID ) ); ?>">
                     <?php
                       if ( $index === 0 ) { ;?>
-                        <?php echo get_the_post_thumbnail( $p->ID, 'medium_large', ['class' => 'ratio-4-3'] ); ?>
+                        <?php echo get_the_post_thumbnail( $p->ID, 'medium_large', ['class' => 'ratio-4-3 hidden visible-tablet visible-desktop'] ); ?>
                         <svg width="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 20L11.2929 20.7071L12 21.4142L12.7071 20.7071L12 20ZM13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L13 5ZM5.29289 14.7071L11.2929 20.7071L12.7071 19.2929L6.70711 13.2929L5.29289 14.7071ZM12.7071 20.7071L18.7071 14.7071L17.2929 13.2929L11.2929 19.2929L12.7071 20.7071ZM13 20L13 5L11 5L11 20L13 20Z" fill="#33363F"></path> </g></svg>
                         <h5 class="no-margin">Previous Destination</h5>
                         <?php } else { ;?>
                         <h5 class="no-margin">Next Destination</h5>
                         <svg width="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 20L11.2929 20.7071L12 21.4142L12.7071 20.7071L12 20ZM13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L13 5ZM5.29289 14.7071L11.2929 20.7071L12.7071 19.2929L6.70711 13.2929L5.29289 14.7071ZM12.7071 20.7071L18.7071 14.7071L17.2929 13.2929L11.2929 19.2929L12.7071 20.7071ZM13 20L13 5L11 5L11 20L13 20Z" fill="#33363F"></path> </g></svg>
-                        <?php echo get_the_post_thumbnail( $p->ID, 'medium_large', ['class' => 'ratio-4-3'] ); ?>
+                        <?php echo get_the_post_thumbnail( $p->ID, 'medium_large', ['class' => 'ratio-4-3 hidden visible-tablet visible-desktop'] ); ?>
                         <?php }?>
                   </a>
                 </div>
@@ -163,7 +163,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
       <div class="spacer"></div>
       <div class="spacer"></div>
   </div>
-  <aside class="sidebar col-30">
+  <aside class="sidebar col-30-desktop full-width">
     <?php if ( has_post_thumbnail() ) : ?>
         <div><?php the_post_thumbnail('full', ['class' => 'hero-image']); ?></div>
     <?php endif; ?>

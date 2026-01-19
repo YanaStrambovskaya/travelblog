@@ -65,6 +65,7 @@ function travelblog_setup() {
         'main_menu_right' => __( 'Main Menu Right', 'travelblog' ), //'travelblog' is important for localization.
         'topbar_left'  => __('Topbar Left', 'travelblog'),
         'social_menu' => __('Topbar Right', 'travelblog'),
+        'mobile_menu' => __('Mobile menu', 'travelblog'),
         )
     );
 }

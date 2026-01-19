@@ -25,7 +25,7 @@
 ?>
 
 <div class="bar">
-    <div class="container flex-between">
+    <div class="container flex flex-between">
         <div class="bar_left flex">
             <?php
                 wp_nav_menu(

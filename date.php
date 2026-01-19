@@ -21,7 +21,7 @@
     <div class="container">
     <?php
         if (have_posts()) {
-            echo '<div class="post-items grid-2-columns gap-30">';
+            echo '<div class="post-items grid-2-columns-desktop grid-1-columns-mobile gap-30">';
             while(have_posts()) {
                 the_post();
                 get_template_part(

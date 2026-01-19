@@ -5,20 +5,20 @@
 
 <section class="footer-top">
     <div class="container">
-        <div class="row flex-between gap-30">
-            <div class="col-30">
+        <div class="flex-row-desktop flex-col-mobile flex-between gap-30">
+            <div class="col-30-desktop full-width">
                 <a href="<?php echo esc_url(home_url('/')) ?>">
                     <img class="footer-top_logo" src="<?= get_field('footer_logo', $footer_page_id) ;?>" alt="Footer logo">
                 </a>
             </div>
-            <div class="col-70">
-             <p class="footer-top_text">
+            <div class="col-70-desktop full-width">
+                <p class="footer-top_text">
                     <?= get_field('footer_top_text', $footer_page_id); ?>
                 </p>
             </div>
         </div>
-        <div class="row flex-between gap-30 flex-start">
-            <div class="col-30 footer-top_about">
+        <div class="flex-row-desktop flex-col-mobile flex-between gap-30 flex-start">
+            <div class="col-30-desktop full-width footer-top_about">
                 <h4 class="footer-top_title">
                     <?= get_field('footer_about_title', $footer_page_id); ?>
                 </h4>
@@ -26,7 +26,7 @@
                     <?= get_field('footer_about_text', $footer_page_id); ?>
                 </p>
             </div>
-            <div class="col-70 flex-between gap-30 flex-start equal-columns">
+            <div class="col-70-desktop  full-width flex-between gap-30 flex-start flex-equal-cols-desktop">
                 <div class="footer-top_subscribe">
                     <h4 class="footer-top_title">
                         <?= get_field('footer_subscribe_title', $footer_page_id); ?>

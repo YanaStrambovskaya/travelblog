@@ -17,8 +17,8 @@ get_header(); ?>
 <div class="spacer"></div>
 <section class="blog-content">
     <div class="container">
-        <div class="flex-between gap-20 flex-start">
-            <div class="col-70">
+        <div class="flex-col-mobile flex-row-desktop flex-between gap-20 flex-start">
+            <div class="col-70-desktop  full-width">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <!-- the_post() prepares the global post context -->
                 <!-- the_post() does critical setup: -->
@@ -60,7 +60,7 @@ get_header(); ?>
                     ?>
                 <?php endwhile; endif; ?>
             </div>
-            <aside class="sidebar col-30"> 
+            <aside class="sidebar col-30-desktop full-width"> 
                 <h3>Categories</h3>
                 <?php foreach($categories as $category) : ?>
                     <div class="category-item">

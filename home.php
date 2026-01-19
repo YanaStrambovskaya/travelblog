@@ -22,8 +22,8 @@ get_header(); ?>
             </div>
             <div class="spacer"></div>
         <?php endif ;?>
-        <div class="flex-between gap-40 flex-start">
-            <div class="col-70">
+        <div class="flex-col-mobile flex-row-desktop flex-between gap-40 flex-start">
+            <div class="col-70-desktop  full-width">
                 <div class="post-items">
                     <?php if (have_posts()) :?>
                         <?php while (have_posts()) : the_post(); ?>
@@ -46,7 +46,7 @@ get_header(); ?>
                 <div class="spacer"></div>
                 <div class="spacer"></div>
             </div>
-            <aside class="sidebar col-30"> 
+            <aside class="sidebar col-30-desktop full-width"> 
                 <a href="/about">
                     <img src="<?php echo THEME_URI . '/assets/images/sidebar-img.png' ;?>" alt="">
                     <h3 class="sidebar-title">Wanderlust blog</h3>

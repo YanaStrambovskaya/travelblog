@@ -38,7 +38,6 @@ get_header();
                     ;?>
                     <?php if ( ! $item ) continue; ?>
                     <li class="glide__slide">
-                        <img src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>">
                         <div class="glide__slide-content">
                             <h2 class="hero-slide_title"><?php echo esc_html($header_text);?></h2>
                             <p class="hero-slide_description"><?php echo esc_html($subheader_text);?></p>
@@ -52,6 +51,7 @@ get_header();
                                 );
                             ;?>
                         </div>
+                        <img class="glide__slide-img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>">
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -80,7 +80,7 @@ get_header();
 <section class="destinations-section">
     <div class="container">
         <h2 class="section-title">Top <span>Destinations</span></h2>
-        <div class="equal-columns equal-columns-height gap-20">
+        <div class="grid-one-col-mobile grid-three-cols-tablet gap-20">
             <?php if ($top_destinations->have_posts()) : ?>
             <?php while ($top_destinations->have_posts()) : $top_destinations->the_post() ; ?>
                 <div class="destination-card flex-column-direction">
@@ -109,7 +109,7 @@ get_header();
 <section class="contact-section beige-bg">
     <img class="torn torn-top" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
     <div class="container">
-        <div class="equal-columns equal-columns-height gap-30">
+        <div class="contact-section_inner flex-one-col-mobile flex-equal-cols-desktop gap-30">
             <div>
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/h1-img-01.png' ;?>" alt="Subscribe">
             </div>
@@ -129,7 +129,7 @@ get_header();
 <section class="recent-post-section">
     <div class="container">
         <h2 class="section-title">Recent <span>Posts</span></h2>
-        <div class="equal-columns equal-columns-height gap-20">
+        <div class="grid-one-col-mobile grid-three-cols-tablet gap-20">
             <?php if ($recent_posts->have_posts()) : ?>
                 <?php while ($recent_posts->have_posts()) : $recent_posts->the_post() ; ?>
                     <?php get_template_part(
@@ -154,7 +154,7 @@ get_header();
 </section>
 <div class="spacer"></div>
 <section class="destination-categories-section">
-    <div class="container equal-columns">
+    <div class="container destination-categories-section_inner">
         <?php 
             $destination_categories = get_terms([ //Returns: array of WP_Term objects
                 'taxonomy' => 'destination_category',

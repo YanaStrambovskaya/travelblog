@@ -39,8 +39,13 @@
 </style>
 
 <header>
-    <?php get_template_part( 'template-parts/header/topbar' ); ?>
-    <?php get_template_part( 'template-parts/header/site-menu' ); ?>
+    <div class="hidden visible-tablet visible-desktop">
+        <?php get_template_part( 'template-parts/header/topbar' ); ?>
+        <?php get_template_part( 'template-parts/header/site-menu' ); ?>
+    </div>
+    <div class="hidden-tablet hidden-desktop">
+        <?php get_template_part( 'template-parts/header/mobile-header' ); ?>
+    </div>
 </header>
 
 <main class="site-main">

@@ -1,20 +1,22 @@
 .hero-section {
   .torn {
-    margin-top: -100px;
+    margin-top: -60px;
   }
   .glide__slide-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    z-index: 2;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    padding-inline: 110px;
+    margin: 150px auto 80px;
+    text-align: center;
     .hero-slide_title {
       font-family: $font-heading, sans-serif;
       font-size: 60px;
+      font-size: clamp(35px, 5vw, 60px);
       color: $color-white;
       text-transform: uppercase;
       margin: 100px 0 0 0;
@@ -37,6 +39,13 @@
 
 // ---------
 .contact-section {
+  .contact-section_inner {
+    max-width: 600px;
+    margin: 0 auto;
+    @media (min-width: 992px) {
+      max-width: 100%;
+    }
+  }
   form {
     .wpcf7-response-output {
       border: none;
@@ -94,42 +103,52 @@
   color: $color-dark;
   font-size: $font-size-paragraph;
 }
-.destination-category-item {
+.destination-categories-section_inner {
   display: flex;
+  gap: 7vw;
   justify-content: center;
-  .number-of-destination {
-    font-family: $font-sans;
-    font-size: $font-size-paragraph;
-    color: $color-gray-2;
-  }
-  .item-name {
-    font-size: 22px;
-    text-align: center;
-  }
-  .item-icons {
-    position: relative;
-    .icon {
-      opacity: 1;
-      height: auto;
-    }
-    .hover-icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      height: auto;
-    }
-  }
-  a {
+  flex-wrap: wrap;
+  .destination-category-item {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    &:hover {
+    justify-content: center;
+    .number-of-destination {
+      font-family: $font-sans;
+      font-size: $font-size-paragraph;
+      color: $color-gray-2;
+    }
+    .item-name {
+      font-size: 22px;
+      text-align: center;
+    }
+    .item-icons {
+      position: relative;
+      height: 80px;
       .icon {
-        opacity: 0;
+        opacity: 1;
+        margin: 0 auto;
+        width: auto;
+        height: 80px;
       }
       .hover-icon {
-        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        height: 80px;
+        width: auto;
+      }
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      &:hover {
+        .icon {
+          opacity: 0;
+        }
+        .hover-icon {
+          opacity: 1;
+        }
       }
     }
   }
