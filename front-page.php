@@ -144,9 +144,18 @@ $hero_section_content_id = $hero_section_content_id ?? 0;
           <path d="M11 18.75c-.2 0-.39-.08-.53-.22l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 011.06 1.06L6.06 12l5.47 5.47A.75.75 0 0111 18.75z" fill="currentColor"/>
           <path d="M19 12.75H5a.75.75 0 010-1.5h14a.75.75 0 010 1.5z" fill="currentColor"/>
         </svg>
-
-        <img class="default" src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg.svg'); ?>" alt="" aria-hidden="true">
-        <img class="hover"   src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg'); ?>" alt="" aria-hidden="true">
+        <picture class="default">
+            <source media="(min-width: 769px)" srcset="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg.svg' ;?>">
+            <img src="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg.svg' ;?>" loading="lazy"
+            decoding="async" alt="">
+        </picture>
+        <picture class="hover">
+            <source media="(min-width: 769px)" srcset="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg' ;?>">
+            <img src="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg' ;?>" loading="lazy"
+            decoding="async" alt="">
+        </picture>
+        <!-- <img class="default" src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg.svg'); ?>" alt="" aria-hidden="true">
+        <img class="hover"   src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg'); ?>" alt="" aria-hidden="true"> -->
       </div>
     </div>
 
@@ -157,8 +166,18 @@ $hero_section_content_id = $hero_section_content_id ?? 0;
           <path d="M19 12.75H5a.75.75 0 010-1.5h14a.75.75 0 010 1.5z" fill="currentColor"/>
         </svg>
 
-        <img class="default" src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg.svg'); ?>" alt="" aria-hidden="true">
-        <img class="hover"   src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg'); ?>" alt="" aria-hidden="true">
+        <picture class="default">
+            <source media="(min-width: 769px)" srcset="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg.svg' ;?>">
+            <img src="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg.svg' ;?>" loading="lazy"
+            decoding="async" alt="">
+        </picture>
+        <picture class="hover">
+            <source media="(min-width: 769px)" srcset="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg' ;?>">
+            <img src="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg' ;?>" loading="lazy"
+            decoding="async" alt="">
+        </picture>
+        <!-- <img class="default" src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg.svg'); ?>" alt="" aria-hidden="true">
+        <img class="hover"   src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg'); ?>" alt="" aria-hidden="true"> -->
       </div>
     </div>
 

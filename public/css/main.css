@@ -2041,7 +2041,7 @@ header .sub-menu a {
   right: 10px;
 }
 
-.swiper-button.next svg {
+.swiper-button.next img {
   transform: rotate(-180deg);
 }
 
@@ -2063,7 +2063,7 @@ header .sub-menu a {
   background: #59815b !important;
 }
 
-.swiper-button__arrow img.hover {
+.swiper-button__arrow .hover {
   opacity: 0;
 }
 
@@ -2076,12 +2076,12 @@ header .sub-menu a {
   fill: #fff;
 }
 
-.swiper-button:hover img.hover {
+.swiper-button:hover .hover {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
 
-.swiper-button:hover img.default {
+.swiper-button:hover .default {
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
