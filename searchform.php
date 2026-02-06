@@ -13,6 +13,7 @@
     />
 
     <button type="submit" class="color-olive-green-btn btn search__submit-btn" aria-label="<?php esc_attr_e( 'Search', 'textdomain' ); ?>">
-        Search <img class="search__submit-btn__icon" src="<?php echo THEME_URI . '/assets/icons/search-white.svg' ;?>" alt="Search">
+        Search <img class="search__submit-btn__icon" src="<?php echo THEME_URI . '/assets/icons/search-white.svg' ;?>" loading="lazy"
+        decoding="async" alt="Search">
     </button>
 </form>

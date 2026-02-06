@@ -201,7 +201,8 @@ add_shortcode('footer_recent_news', function() {
             $recent->the_post();
 
             echo '<li class="footer__recent-item flex gap-5 flex-center-vertical mb-5">';
-            echo '<img class="calendar-icon--grey" src="' . esc_url(get_template_directory_uri()) . '/assets/icons/calendar-gray.svg" alt="calendar">';
+            echo '<img class="calendar-icon--grey" src="' . esc_url(get_template_directory_uri()) . '/assets/icons/calendar-gray.svg" alt="calendar" loading="lazy"
+  decoding="async">';
             echo '<a href="" class="recent__date">';
             echo esc_html( get_the_date('F j, Y') );
             echo '</a>';

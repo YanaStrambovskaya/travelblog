@@ -44,6 +44,7 @@ get_header();
                 <?php
                     $item_content = get_field($item, $hero_section_content_id);
                     $image_url = $item_content['image'];
+                    $mobile_image_url = $item_content['mobile_img'] ?? $item_content['image'];
                     $header_text = $item_content['header_text'];
                     $subheader_text = $item_content['subheader_text'];
                     $related_post_id = $item_content['id'];
@@ -57,7 +58,12 @@ get_header();
                         </h2>
                         <p class="hero-swiper-slide__description"><?php echo esc_html($subheader_text);?></p>
                     </div>
-                    <img width="1920" height="882" class="hero-swiper-slide__img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>">
+                    <picture class="hero-swiper-slide__img">
+                        <source media="(max-width: 768px)" srcset="<?php echo esc_url($mobile_image_url) ?>" type="image/webp" />
+                        <source media="(min-width: 769px)" srcset="<?php echo esc_url($image_url) ?>" type="image/webp" />
+                        <img width="1920" height="882" class="hero-swiper-slide__img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>">
+                    </picture>
+                    <!-- <img width="1920" height="882" class="hero-swiper-slide__img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>"> -->
                 </div>
             <?php endforeach; ?>
         </div>
@@ -122,19 +128,20 @@ get_header();
         <div class="text-center">
             <a class="color-olive-green-btn btn" href="<?php echo get_post_type_archive_link('destination'); ;?>">
                 <span>View All Destinations</span>
-                <img class="arrow-icon" src="<?php echo get_template_directory_uri() . "/assets/icons/arrow-up-right.svg";?>">
+                <img class="arrow-icon" src="<?php echo get_template_directory_uri() . "/assets/icons/arrow-up-right.svg";?>" loading="lazy"
+                decoding="async">
             </a>
         </div>
     </div>
 </section>
 <div class="spacer"></div>
 <section class="contact-section beige-bg">
-    <img class="torn torn-top" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
+    <img class="torn torn-top" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" loading="lazy"
+    decoding="async" alt="">
     <div class="container">
         <div class="contact-section_inner grid grid-1-column-mobile grid-2-columns-desktop grid-2-columns-tablet gap-30">
-            <!-- <div> -->
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/h1-img-01.png' ;?>" alt="Subscribe">
-            <!-- </div> -->
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/h1-img-01.webp' ;?>" loading="lazy"
+            decoding="async" alt="Subscribe">
             <div>
                 <p class="header-top-text no-margin-bottom">Lorem ipsum dolor</p>
                 <h2 class="section-title no-margin text-left">
@@ -145,7 +152,8 @@ get_header();
             </div>
         </div>
     </div>
-    <img class="torn torn-bottom" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
+    <img class="torn torn-bottom" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" loading="lazy"
+    decoding="async" alt="">
 </section>
 <div class="spacer"></div>
 <section class="recent-post-section">
@@ -168,11 +176,13 @@ get_header();
 </section>
 <div class="spacer"></div>
 <section class="shop-section beige-bg">
-    <img class="torn torn-top" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
+    <img class="torn torn-top" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" loading="lazy"
+    decoding="async" alt="">
     <div class="container">
         <h2 class="section-title">Enjoy every <span>moment</span></h2>
     </div>
-    <img class="torn torn-bottom" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
+    <img class="torn torn-bottom" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" loading="lazy"
+    decoding="async" alt="">
 </section>
 <section class="destination-categories__section">
     <div class="container destination-categories__inner">
@@ -197,8 +207,10 @@ get_header();
                 <div class="destination-category__item">
                     <a class="" href="<?php echo get_category_link($term->term_id) ;?>">
                         <div class="destination-category__item-icons">
-                            <img class="default-icon" src="<?php echo $icon ;?>" alt="<?php echo $term->name;?>">
-                            <img class="hover-icon" src="<?php echo $icon_hover ;?>" alt="<?php echo $term->name;?>">
+                            <img class="default-icon" src="<?php echo $icon ;?>" alt="<?php echo $term->name;?>" loading="lazy"
+                            decoding="async">
+                            <img class="hover-icon" src="<?php echo $icon_hover ;?>" alt="<?php echo $term->name;?>" loading="lazy"
+                            decoding="async">
                         </div>
                         <div class="destination-category__item-number-of-destination">
                             <span class="number"><?php echo esc_html($term->count);?></span>
