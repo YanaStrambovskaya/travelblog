@@ -39,9 +39,9 @@
 </style>
 
 <header>
-    <div class="hidden visible-tablet visible-desktop">
+    <div class="desktop-menu__container">
         <?php get_template_part( 'template-parts/header/topbar' ); ?>
-        <?php get_template_part( 'template-parts/header/site-menu' ); ?>
+        <?php get_template_part( 'template-parts/header/desktop-menu' ); ?>
     </div>
     <div class="hidden-tablet hidden-desktop">
         <?php get_template_part( 'template-parts/header/mobile-header' ); ?>

@@ -3,7 +3,7 @@
 $site_name = get_bloginfo( 'name' ); // outputs (prints) site title of the Wordpress website;
 ?>
 <div class="container site-menu flex-center">
-        <nav class="flex-center" aria-label="Main">
+        <nav class="flex-center desktop-menu__nav" aria-label="Main">
             <?php
             wp_nav_menu(
                 array(
@@ -16,11 +16,6 @@ $site_name = get_bloginfo( 'name' ); // outputs (prints) site title of the Wordp
                     )
             )
             ?>
-            <!-- <a href="<?php echo esc_url(home_url('/')) ?>" class="logo"> -->
-                <!-- home_url('/') - returns home url. -->
-                <!-- esc_url('/') - Escapes Url for the safe output. -->
-                <!-- <img src="<?php echo THEME_URI . "/public/images/logo-transparent.png" ?>" alt="<?php echo $site_name ?>"> -->
-            <!-- </a> -->
             <?php
                 if (has_custom_logo()) {
                     echo the_custom_logo();
@@ -42,6 +37,4 @@ $site_name = get_bloginfo( 'name' ); // outputs (prints) site title of the Wordp
             ?>
         </nav>
     </div>
-    <div class="header-search">
-        <?php get_search_form(); ?>
-    </div>
+    <?php get_search_form(); ?>

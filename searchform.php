@@ -1,4 +1,4 @@
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+<form role="search" method="get" class="search-form flex gap-10" action="<?php echo esc_url( home_url( '/' ) ); ?>">
     <label class="screen-reader-text" for="search-input">
         <?php _e( 'Search for:', 'textdomain' ); ?>
     </label>
@@ -12,7 +12,7 @@
         name="s"
     />
 
-    <button type="submit" class="search-submit" aria-label="<?php esc_attr_e( 'Search', 'textdomain' ); ?>">
-        <img src="<?php echo THEME_URI . '/assets/icons/search.svg' ;?>" alt="Search">
+    <button type="submit" class="color-olive-green-btn btn search__submit-btn" aria-label="<?php esc_attr_e( 'Search', 'textdomain' ); ?>">
+        Search <img class="search__submit-btn__icon" src="<?php echo THEME_URI . '/assets/icons/search-white.svg' ;?>" alt="Search">
     </button>
 </form>

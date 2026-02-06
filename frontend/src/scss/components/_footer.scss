@@ -1,94 +1,121 @@
-footer {
-  form {
-    ::placeholder {
-      font-family: $font-cursive;
-      color: $color-white;
-      font-size: 18px;
-      opacity: 1;
-    }
-    input:not([type='submit']) {
-      font-family: $font-cursive;
-      padding: 8px;
-      border-bottom: 1px solid $color-white;
-      border-left: 1px solid $color-white;
-      border-top: none;
-      border-right: none;
-      height: 53px;
-      border-radius: 0;
-      background-color: transparent;
-      color: $color-white;
-      &:focus-visible {
-        outline: none;
-      }
-    }
-    br {
-      display: none;
-    }
-    p {
-      margin: 0;
-    }
-    input[type='submit'] {
-      margin-top: 10px;
-      background-color: transparent;
-      font-family: $font-heading;
-      text-transform: uppercase;
-      color: $color-white;
-      font-size: 16px;
-      border: none;
-      padding: 8px 15px 8px 0px;
-      display: inline-block;
-      cursor: pointer;
-      width: auto;
-      &:hover {
-      }
-    }
-  }
-  .calendar_icon {
-    position: relative;
-    top: 2px;
-  }
+.footer {
+  background-color: $color-dark;
+  padding: 70px 0px;
   color: #fff;
-  .footer-top {
-    background-color: $color-dark;
-    padding: 70px 0px;
-    .footer-top_logo {
-      width: 100%;
-      max-width: 144px;
-    }
-    .footer-top_title {
-      font-size: 22px;
-    }
-    .footer-recent__date {
-      font-size: 18px;
-      color: $color-olive-green;
-      font-family: $font-cursive;
-      transition: all 0.3s ease-in-out;
-      &:hover {
-        color: $color-white;
-        transition: all 0.3s ease-in-out;
-      }
-    }
-    .footer-recent__link {
-      font-family: $font-sans;
-      font-size: 15px;
-      color: $color-gray;
-    }
-    .footer-top_text {
-      font-family: $font-cursive;
-      font-size: 25px;
-      color: $color-gray;
-      max-width: 800px;
-      width: 100%;
-    }
-    .footer-top_subscribe {
-      max-width: 400px;
-    }
+}
+.footer p {
+  color: $color-gray;
+}
+.footer__inner {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  text-align: center;
+  column-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'logo logo logo'
+    'intro intro intro '
+    'about about about'
+    'subscribe subscribe subscribe'
+    'news news news';
+}
+
+@media (min-width: $bp-sm) {
+  .footer__inner {
+    justify-items: start;
+    text-align: left;
+    grid-template-areas:
+      'logo intro intro'
+      'about subscribe news';
   }
-  .footer-bottom-bar {
-    background-color: #111111;
-    padding: 5px 0px;
-  }
-  p {
-    color: $color-gray;
-  }
+}
+.footer__logo-widget {
+  grid-area: logo;
+}
+.footer__desc-intro {
+  grid-area: intro;
+}
+.footer__about-widget {
+  grid-area: about;
+}
+.footer__subscribe-widget {
+  grid-area: subscribe;
+}
+.footer__news-widget {
+  grid-area: news;
+}
+.footer__intro {
+  font-family: $font-cursive;
+  font-size: 25px;
+  color: $color-gray;
+  max-width: 800px;
+  width: 100%;
+}
+
+.recent__link {
+  font-family: $font-sans;
+  font-size: 15px;
+  color: $color-gray;
+}
+.recent__date {
+  font-size: 18px;
+  color: $color-olive-green;
+  font-family: $font-cursive;
+  transition: all 0.3s ease-in-out;
+}
+.recent__date:hover {
+  color: $color-white;
+  transition: all 0.3s ease-in-out;
+}
+.footer-top_title {
+  font-size: 22px;
+}
+.footer__logo {
+  width: 100%;
+  max-width: 144px;
+}
+.footer-bottom-bar {
+  background-color: #111111;
+  padding: 5px 0px;
+}
+.footer form ::placeholder {
+  font-family: $font-cursive;
+  color: $color-white;
+  font-size: 18px;
+  opacity: 1;
+}
+
+.footer form input:not([type='submit']) {
+  font-family: $font-cursive;
+  padding: 8px;
+  border-bottom: 1px solid $color-white;
+  border-left: 1px solid $color-white;
+  border-top: none;
+  border-right: none;
+  height: 53px;
+  border-radius: 0;
+  background-color: transparent;
+  color: $color-white;
+}
+.footer form input:not([type='submit']):focus-visible {
+  outline: none;
+}
+.footer form br {
+  display: none;
+}
+.footer form p {
+  margin: 0;
+}
+.footer form input[type='submit'] {
+  margin-top: 10px;
+  background-color: transparent;
+  font-family: $font-heading;
+  text-transform: uppercase;
+  color: $color-white;
+  font-size: 16px;
+  border: none;
+  padding: 8px 15px 8px 0px;
+  display: inline-block;
+  cursor: pointer;
+  width: auto;
 }

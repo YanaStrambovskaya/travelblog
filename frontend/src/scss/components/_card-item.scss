@@ -1,0 +1,34 @@
+.cards-grid {
+  display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+.card-item.bordered {
+  border: 1px solid #efefef;
+  padding: 15px;
+}
+
+.card-item .torn-label__container {
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  left: 2px;
+}
+
+.card-item .torn-text {
+  padding: 5px 5px;
+}
+
+// .card-item a {
+//   display: block;
+// }
+
+// body.blog .post-items .item-title,
+// body.archive.category .post-items .item-title {
+//   font-size: 42px;
+// }
+
+// body.archive.category .post-items .card-item,
+// body.blog .post-items .item-title {
+//   margin-bottom: 50px;
+// }

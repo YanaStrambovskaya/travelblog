@@ -1,0 +1,43 @@
+.search-form {
+  max-width: 500px;
+  width: 100%;
+  margin: 70px auto 0 auto;
+}
+.search-form ::placeholder {
+  font-family: $font-cursive;
+  color: $color-dark;
+  font-size: $font-size-paragraph;
+}
+#search-input {
+  border-radius: 0;
+  border: 1px solid #ffffff;
+  padding: 10px 15px;
+  font-family: 'CrimsonText-Italic', sans-serif;
+  color: $color-dark;
+  font-size: 16px;
+  background-color: #ffffff42;
+}
+#search-input:focus-visible {
+  outline-color: $color-white;
+  border-radius: 0;
+}
+.search__submit-btn {
+  border: none;
+  cursor: pointer;
+}
+.search__submit-btn__icon {
+  width: 20px;
+  height: auto;
+}
+.search-field::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  background-image: url("data:image/svg+xml;utf8,\
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2'>\
+      <line x1='18' y1='6' x2='6' y2='18'/>\
+      <line x1='6' y1='6' x2='18' y2='18'/>\
+      </svg>");
+  background-size: contain;
+  cursor: pointer;
+}

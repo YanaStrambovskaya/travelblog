@@ -1,0 +1,24 @@
+.social-widget {
+}
+.social-widget__title {
+  text-transform: none;
+  font-size: 18px;
+  font-family: $font-cursive;
+  color: $color-white;
+}
+.dark .social-widget__title {
+  color: $color-dark;
+}
+
+.social-widget__icons {
+}
+.social-widget__icons a {
+  padding: 8px 4px;
+}
+.social-widget__icons svg {
+  fill: #fff;
+  width: 20px;
+}
+.dark .social-widget__icons svg {
+  fill: $color-dark;
+}

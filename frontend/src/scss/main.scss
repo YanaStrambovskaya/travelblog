@@ -10,19 +10,25 @@
 @import 'utilities';
 @import 'variables';
 @import 'fonts';
-@import 'mixins'; // _mixins.scss is a partial SCSS file that contains reusable mixins — small, flexible pieces of CSS logic that you can include throughout your styles.
 
 // Global styles
 @import 'global';
 
-// Components
-@import 'components/header';
-@import 'components/footer';
-@import 'components/buttons';
-@import 'components/torn-bg-under-word';
-
 // Page-specific styles
 @import 'pages/front-page';
-@import 'pages/blog';
+@import 'pages/not-found';
 @import 'pages/category';
 @import 'pages/single-destination';
+
+// Components
+@import 'components/header';
+@import 'components/search-form';
+@import 'components/footer';
+@import 'components/buttons';
+@import 'components/filters';
+@import 'components/card-item';
+@import 'components/swiper';
+@import 'components/contact-widget';
+@import 'components/social-icons-widget';
+@import 'components/torn-bg-under-word';
+@import 'components/media-queries';

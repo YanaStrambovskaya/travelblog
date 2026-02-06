@@ -1,0 +1,52 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+.desktop-menu__container {
+  display: none;
+}
+.mobile-menu__header {
+  padding: 10px 10px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+header .site-menu {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.container.mobile-menu__container {
+  padding: 0;
+}
+#mobile-menu__trigger {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background-color: transparent;
+  border: none;
+}
+.mobile-menu__title {
+  font-family: 'Oswald SemiBold', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+}
+.mobile-menu__icon {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+}
+.mobile-menu__icon span {
+  width: 35px;
+  height: 3px;
+  background-color: #fff;
+}
+.mobile-menu__icon span:first-child,
+.mobile-menu__icon span:last-child {
+  width: 40px;
+}

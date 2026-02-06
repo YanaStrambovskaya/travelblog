@@ -1,0 +1,21 @@
+.not-found-page-section {
+  background-image: url('../../assets/images/error-page-bckg-01.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.not-found-page-section .container {
+  height: 100vh;
+}
+
+.not-found-page-section .section-title {
+  color: $color-white;
+}
+
+.not-found-page__desc {
+  color: $color-white;
+  font-size: $font-size-paragraph;
+  font-family: $font-sans;
+}

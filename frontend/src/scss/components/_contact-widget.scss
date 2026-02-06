@@ -1,0 +1,89 @@
+.contact-widget {
+}
+.contact-widget a {
+  padding: 10px 5px;
+  display: inline-block;
+  text-decoration: none;
+  color: $color-white;
+  font-size: 18px;
+  font-family: $font-cursive;
+}
+.dark .contact-widget a {
+  color: $color-dark;
+}
+.contact-widget__item a::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  vertical-align: middle; /* optional */
+}
+
+.contact-widget__phone a::before {
+  background-image: url('../../assets/icons/phone.svg');
+}
+.dark .contact-widget__phone a::before {
+  background-image: url('../../assets/icons/phone-dark.svg');
+}
+.contact-widget__email a::before {
+  background-image: url('../../assets/icons/envelope.svg');
+}
+.dark .contact-widget__email a::before {
+  background-image: url('../../assets/icons/email-dark.svg');
+}
+
+// .bar {
+//   font-family: $font-cursive;
+//   color: $color-white;
+//   text-transform: none;
+//   align-items: center;
+//   font-size: 15px;
+//   margin-right: 5px;
+//   ul {
+//     // gap: 15px;
+//     li {
+//       a {
+//         padding: 10px 5px;
+//         display: inline-block;
+//         text-decoration: none;
+//         color: $color-white;
+//         font-size: 18px;
+//       }
+//     }
+//   }
+//   .bar_icon {
+//     width: 20px;
+//     height: 20px;
+//     display: inline-block;
+
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: contain;
+
+//     vertical-align: middle; /* optional */
+//   }
+//   li.topbar-left-phone .bar_icon {
+//     background-image: url('../../assets/icons/phone.svg');
+//   }
+//   li.topbar-left-email .bar_icon {
+//     background-image: url('../../assets/icons/envelope.svg');
+//   }
+//   li.socials-instagram .bar_icon {
+//     background-image: url('../../assets/icons/instagram.svg');
+//   }
+//   li.socials-facebook .bar_icon {
+//     background-image: url('../../assets/icons/facebook.svg');
+//   }
+//   .social_block .bar_icon {
+//     width: 17px;
+//     height: 17px;
+//   }
+//   .social-text {
+//     display: none;
+//   }
+// }

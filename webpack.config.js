@@ -8,7 +8,9 @@ module.exports = {
   entry: {
     // this defines where Webpuck starts the building process.
     main: './frontend/src/js/main.js',
-    style: './frontend/src/scss/main.scss',
+    'critical/global': './frontend/src/scss/critical/global.scss',
+    'critical/front-page': './frontend/src/scss/critical/front-page.scss',
+    // style: './frontend/src/scss/main.scss',
     reactApp: './frontend/src/react/index.jsx',
   },
 
@@ -38,6 +40,20 @@ module.exports = {
             ],
           },
         },
+      },
+      // ✅ CSS (from node_modules like Swiper)
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: !isProd,
+              url: true, // ✅ allow url() inside CSS (important for libs)
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/i, // finds all .scss files.

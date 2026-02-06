@@ -10,16 +10,20 @@
   color: $color-white;
   background-color: $color-olive-green;
   padding: 10px 40px;
-  img {
-    width: 30px;
-    transform: rotate(0deg);
-    transition: all 0.3s ease-in-out;
-  }
-  &:hover {
-    background-color: $color-olive-green-hover;
-    img {
-      transform: rotate(45deg);
-      transition: all 0.3s ease-in-out;
-    }
-  }
+  height: 50px;
+  gap: 5px;
+  display: inline-flex;
+}
+
+.color-olive-green-btn:hover {
+  background-color: $color-olive-green-hover;
+}
+.color-olive-green-btn .arrow-icon {
+  width: 30px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+.color-olive-green-btn:hover .arrow-icon {
+  transform: rotate(45deg);
+  transition: all 0.3s ease-in-out;
 }

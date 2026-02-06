@@ -1,0 +1,50 @@
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./frontend/src/scss/critical/front-page.scss ***!
+  \*********************************************************************************************************************************************************************************************/
+.hero-swiper-slide__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-inline: clamp(40px, 10vw, 110px);
+  margin: 120px auto 20px;
+  text-align: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.hero-swiper-slide__title a {
+  font-family: "Oswald SemiBold", sans-serif;
+  font-size: 60px;
+  font-size: clamp(40px, 5vw, 60px);
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 0 0;
+  display: block;
+}
+
+.hero-swiper-slide__description {
+  font-family: "Roboto-Light", sans-serif;
+  font-size: 20px;
+  color: #fff;
+  max-width: 570px;
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+}
+
+.hero-section .swiper-button {
+  display: none;
+}
+
+.swiper-pagination {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 70px;
+  z-index: 10;
+}
+
+/*# sourceMappingURL=front-page.css.map*/
