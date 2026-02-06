@@ -45,7 +45,7 @@
         <p class="description no-margin flex-grow">
             <?php echo wp_trim_words( get_the_content(), 25, '…' ); ?>
         </p>
-        <a href="<?= get_permalink() ;?>">
+        <a href="<?= get_permalink() ;?>" aria-label="<?php echo esc_attr(get_the_title()); ?>">
             <span class="read-more-text">READ MORE</span>
             <img class="arrow-icon" width="20" height="20" src="<?php echo get_template_directory_uri() . '/assets/icons/arrow-up-right-svgrepo-com.svg' ;?>" alt="Read more"/>
         </a>
