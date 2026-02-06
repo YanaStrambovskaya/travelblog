@@ -69,23 +69,23 @@ add_action('wp_head', function() {
     <link rel="icon" href="<?php echo esc_url($favicon); ?>" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo esc_url($favicon); ?>">
     <?php
-    $fontOswald = get_template_directory_uri() . '/assets/fonts/Oswald-SemiBold.woff2';
-    $fontRoboto = get_template_directory_uri() . '/assets/fonts/Roboto-Lightd.woff2';
+    // $fontOswald = get_template_directory_uri() . '/assets/fonts/Oswald-SemiBold.woff2';
+    // $fontRoboto = get_template_directory_uri() . '/assets/fonts/Roboto-Lightd.woff2';
     
-    echo '<link
-        rel="preload"
-        href="'. esc_url($fontOswald) .'"
-        as="font"
-        type="font/woff2"
-        crossorigin
-    >';
-    echo '<link
-        rel="preload"
-        href="'. esc_url($fontRoboto) .'"
-        as="font"
-        type="font/woff2"
-        crossorigin
-    >';
+    // echo '<link
+    //     rel="preload"
+    //     href="'. esc_url($fontOswald) .'"
+    //     as="font"
+    //     type="font/woff2"
+    //     crossorigin
+    // >';
+    // echo '<link
+    //     rel="preload"
+    //     href="'. esc_url($fontRoboto) .'"
+    //     as="font"
+    //     type="font/woff2"
+    //     crossorigin
+    // >';
     
 }, 1);
 
