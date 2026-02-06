@@ -69,6 +69,35 @@ add_action('wp_head', function() {
     <link rel="icon" href="<?php echo esc_url($favicon); ?>" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo esc_url($favicon); ?>">
     <?php
+        // Only preload on front page (change if you also show hero elsewhere)
+        if (!is_front_page()) {
+            return;
+        }
+
+        // Your hero content storage page
+        $hero_page = get_page_by_path('hero-section-content');
+        $hero_id   = $hero_page ? (int) $hero_page->ID : 0;
+
+        if (!$hero_id) {
+            return;
+        }
+
+        // Your first slide field name
+        $first_slide = get_field('slide_one_content', $hero_id);
+
+        if (!is_array($first_slide)) {
+            return;
+        }
+
+        // Prefer mobile image for LCP on mobile
+        $url = $first_slide['mobile_img'] ?? $first_slide['image'] ?? '';
+
+        if (!$url) {
+            return;
+        }
+
+        echo '<link rel="preload" as="image" href="' . esc_url($url) . '" fetchpriority="high">' . "\n";
+
     // $fontOswald = get_template_directory_uri() . '/assets/fonts/Oswald-SemiBold.woff2';
     // $fontRoboto = get_template_directory_uri() . '/assets/fonts/Roboto-Lightd.woff2';
     
