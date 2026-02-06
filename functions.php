@@ -63,6 +63,12 @@ add_action('wp_head', function() {
     if ($output) {
         echo "<style id='critical-css'>\n$output\n</style>\n";
     }
+
+    $favicon = get_stylesheet_directory_uri() . '/assets/images/cropped-favicon-img-192x192.jpg';
+    ?>
+    <link rel="icon" href="<?php echo esc_url($favicon); ?>" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="<?php echo esc_url($favicon); ?>">
+    <?php
     // $fontOswald = get_template_directory_uri() . '/fonts/Oswald-SemiBold.woff2';
     // $fontRoboto = get_template_directory_uri() . '/fonts/Roboto-Lightd.woff2';
     
