@@ -44,7 +44,6 @@ get_header();
                 <?php
                     $item_content = get_field($item, $hero_section_content_id);
                     $image_url = $item_content['image'];
-                    $mobile_image_url = $item_content['mobile_img'];
                     $header_text = $item_content['header_text'];
                     $subheader_text = $item_content['subheader_text'];
                     $related_post_id = $item_content['id'];
@@ -58,12 +57,7 @@ get_header();
                         </h2>
                         <p class="hero-swiper-slide__description"><?php echo esc_html($subheader_text);?></p>
                     </div>
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="<?php echo esc_url($mobile_image_url) ?>" type="image/webp" />
-                        <source media="(min-width: 769px)" srcset="<?php echo esc_url($image_url) ?>" type="image/webp" />
-                        <img width="1920" height="882" class="hero-swiper-slide__img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>">
-                    </picture>
-                    <!-- <img width="1920" height="882" class="hero-swiper-slide__img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>"> -->
+                    <img width="1920" height="882" class="hero-swiper-slide__img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>">
                 </div>
             <?php endforeach; ?>
         </div>
