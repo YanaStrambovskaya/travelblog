@@ -37,55 +37,140 @@ get_header();
         "slidesPerView" => 1
     ]
 ;?>
+<?php
+/**
+ * HERO SECTION (Swiper) — LCP optimized
+ * - Only the FIRST slide image is eager + fetchpriority=high
+ * - Other slides are lazy
+ * - Uses <picture> with mobile/desktop WebP sources
+ */
+
+$swiperOptions = $swiperOptions ?? [];
+$hero_section_content_items = $hero_section_content_items ?? [];
+$hero_section_content_id = $hero_section_content_id ?? 0;
+?>
+
 <section class="hero-section">
-    <div class="swiper hero-swiper" data-swiper=<?php echo json_encode($swiperOptions) ;?>>
-        <div class="swiper-wrapper">
-            <?php foreach ( $hero_section_content_items as $item ) : ?>
-                <?php
-                    $item_content = get_field($item, $hero_section_content_id);
-                    $image_url = $item_content['image'];
-                    $mobile_image_url = $item_content['mobile_img'] ?? $item_content['image'];
-                    $header_text = $item_content['header_text'];
-                    $subheader_text = $item_content['subheader_text'];
-                    $related_post_id = $item_content['id'];
-                    $related_post_url = get_permalink( $related_post_id );
-                ;?>
-                <?php if ( !$item ) continue; ?>
-                <div class="swiper-slide grid">
-                    <div class="hero-swiper-slide__content">
-                        <h2 class="hero-swiper-slide__title">
-                            <a class="multi-line-underline multi-line-underline-white" href="<?php echo esc_url($related_post_url); ?>"><?php echo esc_html($header_text);?></a>
-                        </h2>
-                        <p class="hero-swiper-slide__description"><?php echo esc_html($subheader_text);?></p>
-                    </div>
-                    <picture class="hero-swiper-slide__img">
-                        <source media="(max-width: 768px)" srcset="<?php echo esc_url($mobile_image_url) ?>" type="image/webp" />
-                        <source media="(min-width: 769px)" srcset="<?php echo esc_url($image_url) ?>" type="image/webp" />
-                        <img width="1920" height="882" class="hero-swiper-slide__img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>">
-                    </picture>
-                    <!-- <img width="1920" height="882" class="hero-swiper-slide__img" src="<?php echo esc_url($image_url) ?>" alt="<?php echo esc_attr($header_text);?>"> -->
-                </div>
-            <?php endforeach; ?>
+  <div class="swiper hero-swiper" data-swiper='<?php echo esc_attr(wp_json_encode($swiperOptions)); ?>'>
+    <div class="swiper-wrapper">
+
+      <?php $i = 0; ?>
+      <?php foreach ($hero_section_content_items as $item) : ?>
+        <?php if (!$item) continue; ?>
+
+        <?php
+          $item_content = get_field($item, $hero_section_content_id);
+
+          if (!is_array($item_content)) {
+            continue;
+          }
+
+          $image_url        = !empty($item_content['image']) ? $item_content['image'] : '';
+          $mobile_image_url = !empty($item_content['mobile_img']) ? $item_content['mobile_img'] : $image_url;
+
+          $header_text      = !empty($item_content['header_text']) ? $item_content['header_text'] : '';
+          $subheader_text   = !empty($item_content['subheader_text']) ? $item_content['subheader_text'] : '';
+
+          $related_post_id  = !empty($item_content['id']) ? absint($item_content['id']) : 0;
+          $related_post_url = $related_post_id ? get_permalink($related_post_id) : '';
+
+          $is_first = ($i === 0);
+          $i++;
+
+          // If no image, skip the slide
+          if (!$image_url) {
+            continue;
+          }
+        ?>
+
+        <div class="swiper-slide grid">
+          <div class="hero-swiper-slide__content">
+            <?php if ($header_text) : ?>
+              <h2 class="hero-swiper-slide__title">
+                <?php if ($related_post_url) : ?>
+                  <a class="multi-line-underline multi-line-underline-white"
+                     href="<?php echo esc_url($related_post_url); ?>">
+                    <?php echo esc_html($header_text); ?>
+                  </a>
+                <?php else : ?>
+                  <?php echo esc_html($header_text); ?>
+                <?php endif; ?>
+              </h2>
+            <?php endif; ?>
+
+            <?php if ($subheader_text) : ?>
+              <p class="hero-swiper-slide__description">
+                <?php echo esc_html($subheader_text); ?>
+              </p>
+            <?php endif; ?>
+          </div>
+
+          <picture class="hero-swiper-slide__img">
+            <?php if ($mobile_image_url) : ?>
+              <source
+                media="(max-width: 768px)"
+                srcset="<?php echo esc_url($mobile_image_url); ?>"
+                type="image/webp"
+              />
+            <?php endif; ?>
+
+            <source
+              media="(min-width: 769px)"
+              srcset="<?php echo esc_url($image_url); ?>"
+              type="image/webp"
+            />
+
+            <img
+              class="hero-swiper-slide__img"
+              src="<?php echo esc_url($mobile_image_url ?: $image_url); ?>"
+              alt="<?php echo esc_attr($header_text); ?>"
+              width="1920"
+              height="882"
+              decoding="async"
+              loading="<?php echo $is_first ? 'eager' : 'lazy'; ?>"
+              <?php if ($is_first) : ?>fetchpriority="high"<?php endif; ?>
+              sizes="100vw"
+            >
+          </picture>
         </div>
-         <!-- arrows -->
-         <div class="swiper-button prev visible-tablet visible-desktop">
-            <div class="swiper-button__arrow">
-                <svg class="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 18.75C10.9015 18.7505 10.8038 18.7313 10.7128 18.6935C10.6218 18.6557 10.5393 18.6001 10.47 18.53L4.47001 12.53C4.32956 12.3894 4.25067 12.1988 4.25067 12C4.25067 11.8013 4.32956 11.6107 4.47001 11.47L10.47 5.47003C10.6122 5.33755 10.8002 5.26543 10.9945 5.26885C11.1888 5.27228 11.3742 5.35099 11.5116 5.48841C11.649 5.62582 11.7278 5.81121 11.7312 6.00551C11.7346 6.19981 11.6625 6.38785 11.53 6.53003L6.06001 12L11.53 17.47C11.6705 17.6107 11.7494 17.8013 11.7494 18C11.7494 18.1988 11.6705 18.3894 11.53 18.53C11.4608 18.6001 11.3782 18.6557 11.2872 18.6935C11.1962 18.7313 11.0986 18.7505 11 18.75Z" fill="#000000"></path> <path d="M19 12.75H5C4.80109 12.75 4.61032 12.671 4.46967 12.5303C4.32902 12.3897 4.25 12.1989 4.25 12C4.25 11.8011 4.32902 11.6103 4.46967 11.4697C4.61032 11.329 4.80109 11.25 5 11.25H19C19.1989 11.25 19.3897 11.329 19.5303 11.4697C19.671 11.6103 19.75 11.8011 19.75 12C19.75 12.1989 19.671 12.3897 19.5303 12.5303C19.3897 12.671 19.1989 12.75 19 12.75Z" fill="#000000"></path> </g></svg>
-                <img class="default" src="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg.svg' ;?>" alt="">
-                <img class="hover" src="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg' ;?>" alt="">
-            </div>
-         </div>
-         <div class="swiper-button next visible-tablet visible-desktop">
-            <div class="swiper-button__arrow">
-                <svg class="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 18.75C10.9015 18.7505 10.8038 18.7313 10.7128 18.6935C10.6218 18.6557 10.5393 18.6001 10.47 18.53L4.47001 12.53C4.32956 12.3894 4.25067 12.1988 4.25067 12C4.25067 11.8013 4.32956 11.6107 4.47001 11.47L10.47 5.47003C10.6122 5.33755 10.8002 5.26543 10.9945 5.26885C11.1888 5.27228 11.3742 5.35099 11.5116 5.48841C11.649 5.62582 11.7278 5.81121 11.7312 6.00551C11.7346 6.19981 11.6625 6.38785 11.53 6.53003L6.06001 12L11.53 17.47C11.6705 17.6107 11.7494 17.8013 11.7494 18C11.7494 18.1988 11.6705 18.3894 11.53 18.53C11.4608 18.6001 11.3782 18.6557 11.2872 18.6935C11.1962 18.7313 11.0986 18.7505 11 18.75Z" fill="#000000"></path> <path d="M19 12.75H5C4.80109 12.75 4.61032 12.671 4.46967 12.5303C4.32902 12.3897 4.25 12.1989 4.25 12C4.25 11.8011 4.32902 11.6103 4.46967 11.4697C4.61032 11.329 4.80109 11.25 5 11.25H19C19.1989 11.25 19.3897 11.329 19.5303 11.4697C19.671 11.6103 19.75 11.8011 19.75 12C19.75 12.1989 19.671 12.3897 19.5303 12.5303C19.3897 12.671 19.1989 12.75 19 12.75Z" fill="#000000"></path> </g></svg>
-                <img class="default" src="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg.svg' ;?>" alt="">
-                <img class="hover" src="<?php echo THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg' ;?>" alt="">
-            </div>
-         </div>
-         <div class="swiper-pagination hidden-tablet hidden-desktop"></div>
-         <img class="torn torn-bottom" src="<?php echo  THEME_URI . '/assets/images/torm-bottom.png'?>" alt="">
+
+      <?php endforeach; ?>
     </div>
+
+    <!-- arrows -->
+    <div class="swiper-button prev visible-tablet visible-desktop" aria-hidden="true">
+      <div class="swiper-button__arrow">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 18.75c-.2 0-.39-.08-.53-.22l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 011.06 1.06L6.06 12l5.47 5.47A.75.75 0 0111 18.75z" fill="currentColor"/>
+          <path d="M19 12.75H5a.75.75 0 010-1.5h14a.75.75 0 010 1.5z" fill="currentColor"/>
+        </svg>
+
+        <img class="default" src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg.svg'); ?>" alt="" aria-hidden="true">
+        <img class="hover"   src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg'); ?>" alt="" aria-hidden="true">
+      </div>
+    </div>
+
+    <div class="swiper-button next visible-tablet visible-desktop" aria-hidden="true">
+      <div class="swiper-button__arrow">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 18.75c-.2 0-.39-.08-.53-.22a.75.75 0 010-1.06L17.94 12l-5.47-5.47a.75.75 0 011.06-1.06l6 6a.75.75 0 010 1.06l-6 6c-.14.14-.33.22-.53.22z" fill="currentColor"/>
+          <path d="M19 12.75H5a.75.75 0 010-1.5h14a.75.75 0 010 1.5z" fill="currentColor"/>
+        </svg>
+
+        <img class="default" src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg.svg'); ?>" alt="" aria-hidden="true">
+        <img class="hover"   src="<?php echo esc_url(THEME_URI . '/assets/icons/hero-slider-torn-bg-hover.svg'); ?>" alt="" aria-hidden="true">
+      </div>
+    </div>
+
+    <div class="swiper-pagination hidden-tablet hidden-desktop"></div>
+
+    <img class="torn torn-bottom"
+         src="<?php echo esc_url(THEME_URI . '/assets/images/torm-bottom.png'); ?>"
+         alt=""
+         aria-hidden="true">
+  </div>
 </section>
+
 <div class="spacer"></div>
 <section class="filter__section">
     <div class="container">
