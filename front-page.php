@@ -140,7 +140,7 @@ get_header();
     decoding="async" alt="">
     <div class="container">
         <div class="contact-section_inner grid grid-1-column-mobile grid-2-columns-desktop grid-2-columns-tablet gap-30">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/h1-img-01.webp' ;?>" loading="lazy"
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/h1-img-01.png' ;?>" loading="lazy"
             decoding="async" alt="Subscribe">
             <div>
                 <p class="header-top-text no-margin-bottom">Lorem ipsum dolor</p>
