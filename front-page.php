@@ -106,7 +106,7 @@ get_header();
             <?php while ($top_destinations->have_posts()) : $top_destinations->the_post() ; ?>
                 <div class="flex-column-direction-mobile">
                     <?php if (has_post_thumbnail()) :?>
-                    <a href="<?= the_permalink() ;?>">
+                    <a href="<?= the_permalink() ;?>" aria-label="<?php echo esc_attr(get_the_title()); ?>">
                             <?php the_post_thumbnail('medium', [
                                 'class' => 'ratio-4-3'
                             ]); ?>
@@ -129,7 +129,7 @@ get_header();
             <a class="color-olive-green-btn btn" href="<?php echo get_post_type_archive_link('destination'); ;?>">
                 <span>View All Destinations</span>
                 <img class="arrow-icon" src="<?php echo get_template_directory_uri() . "/assets/icons/arrow-up-right.svg";?>" loading="lazy"
-                decoding="async">
+                decoding="async" alt="View All Destinations">
             </a>
         </div>
     </div>
