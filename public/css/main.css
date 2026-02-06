@@ -2075,8 +2075,12 @@ header .sub-menu a {
 }
 
 .swiper-wrapper {
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  height: auto;
 }
 
 .contact-widget a {
