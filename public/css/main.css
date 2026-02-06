@@ -820,6 +820,18 @@ li {
   height: 40px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @font-face {
   font-family: "Oswald SemiBold";
   src: url("../../assets/fonts/Oswald-SemiBold.woff") format("woff"), url("../../assets/fonts/Oswald-SemiBold.woff2") format("woff2");
