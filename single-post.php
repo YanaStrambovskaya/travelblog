@@ -35,7 +35,7 @@ get_header(); ?>
                     <!-- Even one post needs context. -->
                     <article id="post-<?php the_ID(); ?>" class="card-item">
                         <?php the_post_thumbnail('medium') ;?>
-                        <?php the_title() ;?>
+                        <h2 class="section-title text-left"><?php the_title() ;?></h2>
                         <div class="meta">
                             <?php get_the_date() ;?> | <?php get_the_author() ;?>
                         </div>

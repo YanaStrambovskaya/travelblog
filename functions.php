@@ -95,7 +95,6 @@ add_action('wp_head', function() {
         if (!$url) {
             return;
         }
-
         echo '<link rel="preload" as="image" href="' . esc_url($url) . '" fetchpriority="high">' . "\n";
 
     // $fontOswald = get_template_directory_uri() . '/assets/fonts/Oswald-SemiBold.woff2';
